@@ -1,0 +1,22 @@
+# 基础配置
+[base]
+enable_log = true
+
+# HTTP服务配置
+[http_server]
+host = "192.168.1.251"
+port = 5003
+routes = "/api/collect/v1/electricMeter/power/all"
+
+# Modbus TCP配置
+[modbus_tcp]
+host = "192.168.1.74"
+port = 502
+slave_id = 1
+
+# 数据读取配置
+[data]
+read_interval_ms = 10000
+max_retry_count = 3
+response_timeout_ms = 3000
+max_reconnect_count = 10

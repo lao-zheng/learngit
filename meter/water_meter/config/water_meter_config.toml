@@ -1,0 +1,31 @@
+# 基础配置
+[base]
+name        = "水表读取程序"
+enable_log  = 1
+log_level   = "info"
+log_filedir = "data/app/collect/water_meter/logs/water_meter_logs.log"
+
+[http_server]
+host    = "0.0.0.0"
+port    = 5002
+routes  = "/api/collect/v1/waterMeter/totalT/all"
+
+# Modbus RTU配置
+[modbus_rtu]
+device = "/dev/ttysWK3"
+baudrate = 9600
+parity = "N"
+data_bits = 8
+stop_bits = 1
+
+# 水表配置
+[meter]
+count = 9
+meters_addresses = [1, 2, 3, 4, 5, 6, 7, 8, 9] #从机地址表
+
+# 数据读取配置
+[data]
+read_interval_ms = 5000
+max_retry_count = 3
+response_timeout_ms = 2000
+

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcommon.a CMakeFiles/common.dir/modbus_base.cpp.o
+/usr/bin/ranlib libcommon.a

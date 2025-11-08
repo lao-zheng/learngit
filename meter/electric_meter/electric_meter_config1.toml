@@ -1,0 +1,33 @@
+# 基础配置
+[base]
+name        = "电表读取程序"
+enable_log  = 1
+log_level   = "info"
+log_filedir = "/data/data/app/collect/electric_meter/logs/electric_meter_logs.log"
+
+[http_server]
+host    = "192.168.1.251"
+port    = 5003
+routes  = "/api/collect/v1/electricMeter/power/all"
+
+# Modbus TCP配置
+[modbus_tcp]
+host     = "192.168.1.74"
+port     = 502
+slave_id = 1
+
+# 电表配置（固定值）
+[meter]
+count          = 9
+start_register = 0
+register_count = 18
+
+# 数据读取配置
+[data]
+read_interval_ms    = 10000
+max_retry_count     = 3
+response_timeout_ms = 5000
+
+# 日志配置
+[log]
+filedir = "/data/data/app/collect/electric_meter/logs/electric_meter_logs.log"

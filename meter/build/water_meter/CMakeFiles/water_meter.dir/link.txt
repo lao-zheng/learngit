@@ -1,0 +1,1 @@
+aarch64-linux-gnu-g++ -Wall -g -lm -DDEBUG CMakeFiles/water_meter.dir/water.cpp.o CMakeFiles/water_meter.dir/water_meter.cpp.o CMakeFiles/water_meter.dir/__/third_party/hlog/hlog.cpp.o -o water_meter  ../common/libcommon.a -lpthread ../liblibmodbus.a 

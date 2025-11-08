@@ -1,0 +1,47 @@
+# 基础配置
+[base]
+name        = "逆变器读取程序"
+enable_log  = 1
+log_level   = "info"
+log_filedir = "/data/data/app/collect/inverter/logs/inverter_logs.log"
+
+[http_server]
+host    = "192.168.1.251"
+port    = 5004
+routes  = "/api/collect/v1/photovoltaicMeter/totalKWH/all"
+
+# Modbus RTU配置
+[modbus_rtu]
+device = "/dev/ttysWK3"
+baudrate = 9600
+parity = "N"
+data_bits = 8
+stop_bits = 1
+
+# 逆变器配置
+[inverter]
+count = 3
+
+[[inverter.inverters]]
+address = 27
+name = "photovoltaic_inverter_1"   #顶楼光伏逆变器
+register_addr = 1670    # 0x0686
+multiplier = 0.1
+
+[[inverter.inverters]]
+address = 28
+name = "photovoltaic_inverter_2"   #侧楼光伏逆变器
+register_addr = 1670    # 0x0686
+multiplier = 0.1
+
+[[inverter.inverters]]
+address = 35
+name = "huawei_Inverter"           #华为逆变器
+register_addr = 32106   # 0x7D6A
+multiplier = 0.01
+
+# 数据读取配置
+[data]
+read_interval_ms = 10000
+max_retry_count = 3
+response_timeout_ms = 2000

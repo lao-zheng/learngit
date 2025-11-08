@@ -1,0 +1,1 @@
+aarch64-linux-gnu-g++ -Wall -g -lm -DDEBUG CMakeFiles/heat_meter.dir/heat.cpp.o CMakeFiles/heat_meter.dir/heat_meter.cpp.o CMakeFiles/heat_meter.dir/__/third_party/hlog/hlog.cpp.o -o heat_meter  ../common/libcommon.a -lpthread ../liblibmodbus.a 

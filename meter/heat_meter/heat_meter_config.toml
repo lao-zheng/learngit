@@ -1,0 +1,28 @@
+[base]
+name = "热量表读取程序"
+enable_log = true
+log_level = "info"
+log_filedir = "/data/data/app/collect/heat_meter/logs/heat_meter_logs.log"
+
+[http_server]
+host = "0.0.0.0"
+port = 5003
+routes = "/api/collect/v1/heatMeter/all"
+
+[modbus]
+device = "/dev/ttysWK3"
+baudrate = 9600
+timeout_ms = 2000
+retry_count = 3
+
+[heat_meter]
+address = 24
+name = "Heat_Meter"
+read_interval_ms = 5000
+enable_log = true
+
+# 寄存器配置
+[registers]
+heat_accumulated_addr = 10
+heat_accumulated_len = 2
+multiplier = 1.0
